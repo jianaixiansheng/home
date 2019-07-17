@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for i in a %}
+
+    押金：{{ i.house_cash }}价格：{{ i.house_price }}
+
+
+    <a href="{% url 'order:index' house_id=i.id %}">预定</a>   <br>
+{% endfor %}
+<p1><a href="{% url 'order:my_ord' %}">我的订单</a></p1>
+<p1><a href="{% url 'order:cancel' %}">历史订单</a></p1>
+</body>
+</html>
