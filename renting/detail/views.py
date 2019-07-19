@@ -8,23 +8,23 @@ from body.models import *
 #房屋首页
 def index(request):
     home = house.objects.all()
-    return render(request,'index.html',{"home":home})
+    return render(request, 'detail/index.html', {"home":home})
 
 #登陆
 def login(request):
     if request.method == 'GET':
-        return render(request,'login.html')
+        return render(request, 'detail/login.html')
     else:
         username = request.POST.get('username')
         password = request.POST.get("password")
         # 检查是否输入数据
         if not all([username, password]):
-            return render(request, 'login.html', {"errmsg": "数据不完整"})
+            return render(request, 'detail/login.html', {"errmsg": "数据不完整"})
         # 检查账户名和密码是否匹配
         try:
             a = UserInfo.objects.get(user_name=username, user_pwd=password)
         except:
-            return render(request, 'login.html', {"errmsg": "用户名或密码错误"})
+            return render(request, 'detail/login.html', {"errmsg": "用户名或密码错误"})
         else:
             request.session['u_id'] = a.id
             # print("haha", request.session['u_id'])
@@ -44,12 +44,12 @@ def home_detail(request,hid):
         home_info = house.objects.get(id=hid)
         pic = Photo.objects.filter(image_fk_id=hid)
         comment = Comment.objects.filter(comment_fk_house_id=hid,comment_connent__isnull=False)
-        return render(request,'detail.html',{"home_info":home_info,"pic":pic,"comment":comment,"u":u})
+        return render(request, 'detail/detail.html', {"home_info":home_info, "pic":pic, "comment":comment, "u":u})
     else:
         home_info = house.objects.get(id=hid)
         pic = Photo.objects.filter(image_fk_id=hid)
         comment = Comment.objects.filter(comment_fk_house_id=hid,comment_connent__isnull=False)
-        return render(request,'detail.html',{"home_info":home_info,"pic":pic,"comment":comment})
+        return render(request, 'detail/detail.html', {"home_info":home_info, "pic":pic, "comment":comment})
 
 #订单页面
 def order(request):
@@ -63,9 +63,9 @@ def order(request):
     u_id = request.session.get("u_id")
     if u_id:
         u = UserInfo.objects.get(id=u_id)
-        return render(request,'order.html',{"u":u})
+        return render(request, 'detail/order.html', {"u":u})
     else:
-        return render(request,'jump.html')
+        return render(request, 'detail/jump.html')
 
 #评论
 def comment(request,hid):
@@ -80,9 +80,9 @@ def comment(request,hid):
         if u_id:
             u = UserInfo.objects.get(id=u_id)
             a = house.objects.get(id=hid)
-            return render(request,'comment.html',{"u":u,'a':a})
+            return render(request, 'detail/comment.html', {"u":u, 'a':a})
         else:
-            return render(request,'jump.html')
+            return render(request, 'detail/jump.html')
     else:
         comm = request.POST.get("comm")
         print("我是房客的评价",comm)
@@ -92,7 +92,7 @@ def comment(request,hid):
         print("我是获取到的评论",comm)
         #对获取到的内容进行判断
         if not all([comm]):
-            return render(request,'comment.html',{"errmsg":"评论内容不能为空"})
+            return render(request, 'detail/comment.html', {"errmsg": "评论内容不能为空"})
         # 对评论内容进行保存
         Comment.objects.create(comment_connent=comm,comment_fk_user_id=u_id,comment_fk_house_id=home.id)
         return redirect(reverse('index'))
@@ -107,7 +107,7 @@ def reply_comment(request,hid):
         print("我是房子的id", home.id)
         home_id = request.session['home.id']
         # print(a)
-        return render(request,'detail.html',{"u":u,'home':home_id})
+        return render(request, 'detail/detail.html', {"u":u, 'home':home_id})
 
 
 

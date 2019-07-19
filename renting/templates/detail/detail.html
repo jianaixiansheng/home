@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 {% if u %}
                     <li><a  href="#"><i class="glyphicon glyphicon-user"> </i>{{ u.user_name }}</a></li>
                 {% else %}
-                    <li><a  href="{% url 'login' %}"><i class="glyphicon glyphicon-user"> </i>登陆</a></li>
+                    <li><a  href="{% url 'detail:login' %}"><i class="glyphicon glyphicon-user"> </i>登陆</a></li>
                 {% endif %}
 
 				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a></li>
@@ -301,7 +301,7 @@ erv.style.display="none";
 						 <p><span class="bath4">内部情况</span> : <span class="two">{{ home_info.house_status }}</span></p>
 						 <p><span class="bath5">交通情况</span>:<span class="two">{{ home_info.house_traffic }}</span></p>
 						<div class="   right-side">
-							 <a href="{% url 'order' %}" class="hvr-sweep-to-right more">立即订房</a>
+							 <a href="{% url 'detail:order' %}" class="hvr-sweep-to-right more">立即订房</a>
 					 </div>
 					</div>
 					 <div class="col-sm-7 buy-sin">
@@ -386,59 +386,19 @@ erv.style.display="none";
 		 </div>
             <h4 style="margin: 146px 3px;font-family: 方正粗黑宋简体">房源热评♥</h4>
             <div style="width: 362px;height: 500px;margin-top: -126px">
-{#                <ul>#}
-{#                    {% for foo in comment %}#}
-{#                        <li>#}
-{#                        <div class="nr-comment">#}
-{#                            <span>{{ foo.comment_fk_user.user_name }}：{{ foo.comment_connent }}</span>#}
-{#                            <button class="btn btn-primary btn-sm btn-reply">回复</button>#}
-{#                            </div>#}
-{#                            {% for foo in home %}#}
-{#                            <form action="{% url 'comment_reply' hid=foo.id%}" method="post">#}
-{#                            {% csrf_token %}#}
-{#                            {% endfor %}#}
-{#                            <div class="user-reply">#}
-{#                            <duv class="reply-in">#}
-{#                            <input type="text" value="" name="h_connect" placeholder="请输入您要回复的内容"  />#}
-{#                            </duv>#}
-{#                            <div class="reply-buttons">#}
-{#                            <button type="submit" class="btn btn-primary btn-comment btn-sm">发表</button>#}
-{#                            </form>#}
-{#                            <button type="button" class="btn btn-default btn-cancel btn-sm">取消</button>#}
-{#                            </div>#}
-{#                            </div>#}
-{#                        </li>#}
-{##}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#                <form action="{% url 'comment_reply' hid=home_info.id %}" method="post">#}
-{#                    {% csrf_token %}#}
                 <ul>
                     {% for foo in comment %}
                         <li id="user_name">{{ foo.comment_fk_user.user_name }}
                             <input type="text" value="{{ foo.comment_fk_user.id }}" name="userid" style="display: none" id="comment_fk_user">
-                            <input type="text" style="display: none" value="{{ foo.id }}" name="commentid" id="bcommentid">{{ foo.id }}
+                            <input type="text" style="display: none" value="{{ foo.id }}" name="commentid" id="bcommentid">
                         <div>{{ foo.comment_connent }}<a href="javascript:;" class="reply_btn" ></a>//:{{ foo.comment_reply }}</div>
-{#                            <div id="homeid">{{ foo.comment_fk_house.id }}</div>#}
                             <input type="text" style="display: none" value="{{ foo.comment_fk_house.id }}" name="home_id" id="homeid">
                             <input type="text" id="replay"><input type="button" value="发表" class="replay2">
-{#                        <input type="text" id="replay"><buttom value="发表" id="replay2"></buttom>#}
                     </li>
                     {% endfor %}
-{#                <input type="text" id="replay"><input type="button" value="发表" id="replay2">#}
                 </ul>
-{#                    </form>#}
             </div>
-{#            <form action="{% url 'home_detail' hid=home_info.id %}" method="post">#}
-{#                {% csrf_token %}#}
-{#                <input type="text" name="comment">#}
-{#        {% for foo in home_info %}#}
-            <a href="{%url 'comment' hid=home_info.id %}"><input type="button" value="发布评论"></a>
-{#        {% endfor %}#}
-
-
-{#            </form>#}
-
+            <a href="{%url 'detail:comment' hid=home_info.id %}"><input type="button" value="发布评论"></a>
 
 	  </div>
 		<div class="clearfix"> </div>

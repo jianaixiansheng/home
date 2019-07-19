@@ -2,7 +2,7 @@ from django.urls import path
 from detail import views
 from django.conf.urls.static import static
 from django.conf import settings
-
+app_name='detail'
 urlpatterns = [
     path('',views.index,name='index'),
     path('home_detail/<int:hid>',views.home_detail,name='home_detail'),
