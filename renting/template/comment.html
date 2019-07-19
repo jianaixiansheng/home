@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>comment</title>
+</head>
+<body>
+
+<form action="{% url 'comment' hid=a.id%}" method="post">
+{% csrf_token %}
+请输入您对房子的评价<input type="text" name="comm">
+<input type="submit" value="发表">
+</form>
+{{ errmsg }}
+</body>
+</html>

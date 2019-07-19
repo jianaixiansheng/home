@@ -1,29 +1,30 @@
 from django.db import models
-
+import PIL
+from PIL import PILLOW_VERSION
 # Create your models here.
 
 class UserInfo(models.Model):
     """用户信息表"""
     # 用户手机号（作为账号）
-    user_tel = models.IntegerField()
+    user_tel = models.BigIntegerField()
     # 用户名（昵称）
     user_name = models.CharField(max_length=10)
     # 用户密码
     user_pwd = models.CharField(max_length=8)
     # 真实姓名
-    user_really_name = models.CharField(max_length=10,default=None)
+    user_really_name = models.CharField(max_length=10,null=True)
     # 身份证
-    user_id_card = models.CharField(max_length=18,default=None)
+    user_id_card = models.CharField(max_length=18,null=True)
     # 生日
     user_birth = models.DateField(default=None)
     # 所在地
     user_addr = models.CharField(max_length=100)
     # 工作
-    user_work = models.CharField(max_length=100,default=None)
+    user_work = models.CharField(max_length=100,null=True)
     # 教育
-    user_edu = models.CharField(max_length=100,default=None)
+    user_edu = models.CharField(max_length=100,null=True)
     # 性别
-    user_sex = models.CharField(max_length=10,default=None)
+    user_sex = models.CharField(max_length=10,null=True)
 
 
 class house(models.Model):
@@ -87,9 +88,9 @@ class Order(models.Model):
 class Comment(models.Model):
      """评论表"""
      # 评论内容
-     comment_connent = models.TextField()
+     comment_connent = models.TextField(blank=True)
      # 房东回复的评论
-     comment_reply = models.TextField()
+     comment_reply = models.TextField(blank=True)
      comment_fk_house = models.ForeignKey('house',on_delete=models.CASCADE)
      comment_fk_user = models.ForeignKey('UserInfo',on_delete=models.CASCADE)
 
@@ -103,3 +104,9 @@ class men(models.Model):
     men_name = models.CharField(max_length=100)
     men_ID_card = models.CharField(max_length=18)
     men_tel = models.IntegerField()
+
+class ReplyComment(models.Model):
+    comment_reply = models.CharField(max_length=300)
+    comment_fk_house = models.ForeignKey('house', on_delete=models.CASCADE)
+    comment_fk_user = models.ForeignKey('UserInfo', on_delete=models.CASCADE)
+

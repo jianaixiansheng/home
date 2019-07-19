@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+{% for foo in home %}
+    <a href="{% url 'home_detail' hid=foo.id %}"><h1>{{ foo.house_intro }}</h1></a> <br>
+    地址：{{ foo.house_addr }} <br>
+{% endfor %}
+
+</body>
+</html>
