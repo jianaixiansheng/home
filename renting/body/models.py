@@ -1,5 +1,6 @@
 from django.db import models
-
+import PIL
+from PIL import PILLOW_VERSION
 # Create your models here.
 
 class UserInfo(models.Model):
@@ -103,9 +104,9 @@ class Order(models.Model):
 class Comment(models.Model):
      """评论表"""
      # 评论内容
-     comment_connent = models.TextField()
+     comment_connent = models.TextField(blank=True)
      # 房东回复的评论
-     comment_reply = models.TextField()
+     comment_reply = models.TextField(blank=True)
      comment_fk_house = models.ForeignKey('house',on_delete=models.CASCADE)
      comment_fk_user = models.ForeignKey('UserInfo',on_delete=models.CASCADE)
 

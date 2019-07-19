@@ -19,4 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('order.urls')), # 订单系统
+    path("detail/",include('detail.urls'))
 ]
