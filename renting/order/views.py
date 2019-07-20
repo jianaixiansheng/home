@@ -14,11 +14,11 @@ def login(request):
             a = UserInfo.objects.get(user_tel=name,user_pwd=pwd)
             if a:
                 request.session['u_id']=a.id
-                return redirect('order:detail')
+                return redirect(reverse('detail:index'))
             else:
                 return HttpResponse('失败')
         except:
-            return HttpResponse('失败')
+            return HttpResponse('lalala失败')
 def register(request):
     if request.method == "GET":
         return render(request,'order/register.html')
@@ -70,7 +70,9 @@ def ding(request):
         tel = request.POST.get('tel') # 获取电话号码
         remark = request.POST.get('remark') # 获取订单备注
         ernter = ernter+" "
+        print('我是入住时间',ernter)
         leavel = leavel+" "
+        print("我是离开时间",leavel)
         d1 = datetime.datetime.strptime(leavel, '%Y-%m-%d ')
         d2 = datetime.datetime.strptime(ernter, '%Y-%m-%d ')
         d3 = d1-d2

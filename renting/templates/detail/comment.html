@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="{% url 'comment' hid=a.id%}" method="post">
+<form action="{% url 'detail:comment' hid=a.id%}" method="post">
 {% csrf_token %}
 请输入您对房子的评价<input type="text" name="comm">
 <input type="submit" value="发表">

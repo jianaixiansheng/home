@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'body', # 首页
     'order', # 订单系统
-    'detail'
+    'detail' #房屋详情以及评论功能
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'renting.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'template'),os.path.join(BASE_DIR,'static')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),os.path.join(BASE_DIR,'static')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'renting.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'house',  # 数据库名
+        'NAME': 'home',  # 数据库名
         'USER': 'root',  # 用户名
-        'PASSWORD': 'root',  # 密码
-        'HOST': '127.0.0.1',
+        'PASSWORD': '159357qt..',  # 密码
+        'HOST': '39.105.35.227',
         'PORT': '3306',
     }
 }

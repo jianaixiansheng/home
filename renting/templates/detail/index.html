@@ -6,7 +6,7 @@
 </head>
 <body>
 {% for foo in home %}
-    <a href="{% url 'home_detail' hid=foo.id %}"><h1>{{ foo.house_intro }}</h1></a> <br>
+    <a href="{% url 'detail:home_detail' hid=foo.id %}"><h1>{{ foo.house_intro }}</h1></a> <br>
     地址：{{ foo.house_addr }} <br>
 {% endfor %}
 
