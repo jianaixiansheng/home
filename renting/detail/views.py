@@ -1,4 +1,5 @@
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator
 from django.shortcuts import render,redirect,reverse,HttpResponse
 from django.http import JsonResponse
 from body.models import *
@@ -31,6 +32,9 @@ def login(request):
             # print("haha", request.session['u_id'])
             return redirect('index')
 
+
+
+
 #房屋详情
 def home_detail(request,hid):
     """
@@ -45,6 +49,14 @@ def home_detail(request,hid):
         home_info = house.objects.get(id=hid)
         pic = Photo.objects.filter(image_fk_id=hid)
         comment = Comment.objects.filter(comment_fk_house_id=hid,comment_connent__isnull=False)
+        # #分页
+        # paginator = Paginator(comment,5)
+        # #获取第n页的内容
+        # if pindex =='':
+        #     pindex = 1
+        # else:
+        #     pindex = pindex
+        # page = paginator.page(pindex)
         return render(request,'detail/detail.html',{"home_info":home_info,"pic":pic,"comment":comment,"u":u})
     else:
         home_info = house.objects.get(id=hid)
@@ -81,7 +93,9 @@ def comment(request,hid):
         if u_id:
             u = UserInfo.objects.get(id=u_id)
             a = house.objects.get(id=hid)
-            return render(request,'detail/comment.html',{"u":u,'a':a})
+            home_info = house.objects.get(id=hid)
+            pic = Photo.objects.filter(image_fk_id=hid)
+            return render(request,'detail/comment.html',{"u":u,'a':a,'home_info':home_info,'pic':pic})
         else:
             return render(request,'detail/jump.html')
     else:
@@ -98,6 +112,7 @@ def comment(request,hid):
         Comment.objects.create(comment_connent=comm,comment_fk_user_id=u_id,comment_fk_house_id=home.id)
         return redirect(reverse('detail:index'))
 
+
 @csrf_exempt
 def reply_comment(request,hid):
     u_id = request.POST.get('userid')
@@ -109,9 +124,7 @@ def reply_comment(request,hid):
         home_id = request.session['home.id']
         # print(a)
         return render(request,'detail/detail.html',{"u":u,'home':home_id})
-
-
-
+@csrf_exempt
 def replay_comment_1(request):
     comm2 = request.POST.get('comm')
     print('我是房东回复的评论',comm2)
@@ -128,12 +141,6 @@ def replay_comment_1(request):
         return JsonResponse({"res":1})
     else:
         return JsonResponse({"res": 0})
-
-
-
-
-
-
 
 
 

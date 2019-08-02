@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container-fluid">
 				<nav class="pull">
 					<ul>
-						<li><a  href="index.html">港湾名宿</a></li>
+						<li><a  href="{% url 'detail:index' %}">港湾名宿</a></li>
 						<li><p1><a href="{% url 'order:my_ord' %}">我的订单</a></p1></li>
 						<li><p1><a href="{% url 'order:cancel' %}">历史订单</a></p1></li>
                         <li><p1><a href="{% url 'order:landlord' %}">房源订单</a></p1></li>
@@ -79,6 +79,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><span ><i class="glyphicon glyphicon-phone"> </i>+010 8888-8888</span></li>
                 {% if u %}
                     <li><a  href="#"><i class="glyphicon glyphicon-user"> </i>{{ u.user_name }}</a></li>
+                    <li><a  href="#"><i class="glyphicon glyphicon-user"> </i>用户中心</a></li>
+                    <li><a  href="#"><i class="glyphicon glyphicon-user"> </i>退出</a></li>
                 {% else %}
                     <li><a  href="{% url 'order:login' %}"><i class="glyphicon glyphicon-user"> </i>登陆</a></li>
                 {% endif %}
@@ -177,20 +179,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class=" container">
 	<h3><span>Lor</span>em</h3> 
 	<!---->
-	<div class="menu-right">
-		 <ul class="menu">
-			<li class="item1"><a href="#">菜单<i class="glyphicon glyphicon-menu-down"> </i> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="buy.html">购买</a></li>
-				<li class="subitem2"><a href="buy.html">出租 </a></li>
-				<li class="subitem3"><a href="buy.html">旅馆 </a></li>
-				<li class="subitem1"><a href="buy.html">转售 </a></li>
-				<li class="subitem2"><a href="loan.html">公寓</a></li>
-				<li class="subitem3"><a href="buy.html">经销商 </a></li>
-			</ul>
-		</li>
-		</ul>
-	</div>
+{#	<div class="menu-right">#}
+{#		 <ul class="menu">#}
+{#			<li class="item1"><a href="#">菜单<i class="glyphicon glyphicon-menu-down"> </i> </a>#}
+{#			<ul class="cute">#}
+{#				<li class="subitem1"><a href="#">购买</a></li>#}
+{#				<li class="subitem2"><a href="#">出租 </a></li>#}
+{#				<li class="subitem3"><a href="#">旅馆 </a></li>#}
+{#				<li class="subitem1"><a href="#">转售 </a></li>#}
+{#				<li class="subitem2"><a href="#">公寓</a></li>#}
+{#				<li class="subitem3"><a href="#">经销商 </a></li>#}
+{#			</ul>#}
+{#		</li>#}
+{#		</ul>#}
+{#	</div>#}
 	<div class="clearfix"> </div>
 		<!--initiate accordion-->
 		<script type="text/javascript">
@@ -212,42 +214,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			});
 		</script>
-{#         <script>#}
-{#            $(document).ready(function() {#}
-{#            $('.btn-reply').click(function() {#}
-{#            // console.log($(this).index());#}
-{#            // 获取回复按钮集合,getElementByClassName;#}
-{#            var m = document.getElementsByClassName("btn-reply");#}
-{#            var n = document.getElementsByClassName("user-reply");#}
-{#            console.log('回复按钮集合' + m);#}
-{#            // 获取回复按钮的索引#}
-{#            var index = $(".btn-reply").index($(this));#}
-{#            console.log(index);#}
-{#            $(".user-reply").eq(index).css("display", "block");#}
-{#            });#}
-{#            $('.btn-cancel').click(function() {#}
-            {#var m = document.getElementsByClassName("btn-reply");#}
-            {#var n = document.getElementsByClassName("user-reply");#}
-{#            var index = $(".btn-cancel").index($(this));#}
-{#            console.log(index);#}
-{#            $(".user-reply").eq(index).css("display", "none");#}
-{#            });#}
-{#            });#}
-{#         </script>#}
-{#        <script type="text/javascript">#}
-{#            $(function(){#}
-{#                //页面加载完毕后开始执行的事件#}
-{#                $(".reply_btn").click(function(){#}
-{#                    $(".reply_textarea").remove();#}
-{#                    $(this).parent().append("<div class='reply_textarea'><textarea name='comm' cols='40' rows='5'></textarea><br/><input type='submit' value='发表' /></div>");#}
-{#                });#}
-{#            });#}
-{#        </script>#}
 	</div>
 </div>
 <!--//header-->
 <!---->
-
+{% block lunbo %}
 <div class="container">
 	<div class="buy-single-single">
 			<div class="col-md-9 single-box">
@@ -261,6 +232,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   {% endfor %}
                 </ul>
 </div>
+{% endblock %}
 <!-- FlexSlider -->
   <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
@@ -340,8 +312,8 @@ erv.style.display="none";
 						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl.jpg' %}" alt=""></a>
 					</div>
 					<div class="box-text">
-						<p><a href="detail.html">马可波罗的小屋</a></p>
-						<a href="detail.html" class="in-box">查看详情</a>
+						<p><a href="#">马可波罗的小屋</a></p>
+						<a href="#" class="in-box">查看详情</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -350,18 +322,18 @@ erv.style.display="none";
 						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl1.jpg' %}" alt=""></a>
 					</div>
 					<div class="box-text">
-						<p><a href="detail.html">北苑地铁附近阳光房</a></p>
-						<a href="detail.html" class="in-box">查看详情</a>
+						<p><a href="#">北苑地铁附近阳光房</a></p>
+						<a href="#" class="in-box">查看详情</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="single-box-img">
 					<div class="box-img">
-						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl2.jpg' %}" alt=""></a>
+						<a href="#"><img class="img-responsive" src="{% static 'images/sl2.jpg' %}" alt=""></a>
 					</div>
 					<div class="box-text">
-						<p><a href="detail.html">观国贸夜景 美式装修 百寸高清智能投影大床房</a></p>
-						<a href="detail.html" class="in-box">查看详情</a>
+						<p><a href="#">观国贸夜景 美式装修 百寸高清智能投影大床房</a></p>
+						<a href="#" class="in-box">查看详情</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -370,79 +342,41 @@ erv.style.display="none";
 						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl3.jpg' %}" alt=""></a>
 					</div>
 					<div class="box-text">
-						<p><a href="detail.html">『无尽夏』八达岭长城世园会别墅第二层整套
+						<p><a href="#">『无尽夏』八达岭长城世园会别墅第二层整套
 </a></p>
-						<a href="detail.html" class="in-box">查看更多</a>
+						<a href="#" class="in-box">查看更多</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="single-box-img">
 					<div class="box-img">
-						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl4.jpg' %}" alt=""></a>
+						<a href="#"><img class="img-responsive" src="{% static 'images/sl4.jpg' %}" alt=""></a>
 					</div>
 					<div class="box-text">
-						<p><a href="detail.html">东阁2号-四号线近北京南站天坛医院西单</a></p>
-						<a href="detail.html" class="in-box">查看更多</a>
+						<p><a href="#">东阁2号-四号线近北京南站天坛医院西单</a></p>
+						<a href="#" class="in-box">查看更多</a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 		 </div>
             <h4 style="margin: 146px 3px;font-family: 方正粗黑宋简体">房源热评♥</h4>
+        {% block comments %}
             <div style="width: 362px;height: 500px;margin-top: -126px">
-{#                <ul>#}
-{#                    {% for foo in comment %}#}
-{#                        <li>#}
-{#                        <div class="nr-comment">#}
-{#                            <span>{{ foo.comment_fk_user.user_name }}：{{ foo.comment_connent }}</span>#}
-{#                            <button class="btn btn-primary btn-sm btn-reply">回复</button>#}
-{#                            </div>#}
-{#                            {% for foo in home %}#}
-{#                            <form action="{% url 'comment_reply' hid=foo.id%}" method="post">#}
-{#                            {% csrf_token %}#}
-{#                            {% endfor %}#}
-{#                            <div class="user-reply">#}
-{#                            <duv class="reply-in">#}
-{#                            <input type="text" value="" name="h_connect" placeholder="请输入您要回复的内容"  />#}
-{#                            </duv>#}
-{#                            <div class="reply-buttons">#}
-{#                            <button type="submit" class="btn btn-primary btn-comment btn-sm">发表</button>#}
-{#                            </form>#}
-{#                            <button type="button" class="btn btn-default btn-cancel btn-sm">取消</button>#}
-{#                            </div>#}
-{#                            </div>#}
-{#                        </li>#}
-{##}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#                <form action="{% url 'comment_reply' hid=home_info.id %}" method="post">#}
-{#                    {% csrf_token %}#}
                 <ul>
                     {% for foo in comment %}
                         <li id="user_name">{{ foo.comment_fk_user.user_name }}
                             <input type="text" value="{{ foo.comment_fk_user.id }}" name="userid" style="display: none" id="comment_fk_user">
                             <input type="text" style="display: none" value="{{ foo.id }}" name="commentid" id="bcommentid">{{ foo.id }}
                         <div>{{ foo.comment_connent }}<a href="javascript:;" class="reply_btn" ></a>//:{{ foo.comment_reply }}</div>
-{#                            <div id="homeid">{{ foo.comment_fk_house.id }}</div>#}
+
                             <input type="text" style="display: none" value="{{ foo.comment_fk_house.id }}" name="home_id" id="homeid">
-                            <input type="text" id="replay"><input type="button" value="发表" class="replay2">
-{#                        <input type="text" id="replay"><buttom value="发表" id="replay2"></buttom>#}
+                            <input type="text" id="replay" name="comm"><input type="button" value="发表" class="replay2">
                     </li>
                     {% endfor %}
-{#                <input type="text" id="replay"><input type="button" value="发表" id="replay2">#}
                 </ul>
-{#                    </form>#}
             </div>
-{#            <form action="{% url 'home_detail' hid=home_info.id %}" method="post">#}
-{#                {% csrf_token %}#}
-{#                <input type="text" name="comment">#}
-{#        {% for foo in home_info %}#}
+        {% endblock %}
             <a href="{%url 'detail:comment' hid=home_info.id %}"><input type="button" value="发布评论"></a>
-{#        {% endfor %}#}
-
-
-{#            </form>#}
-
-
 	  </div>
 		<div class="clearfix"> </div>
 		</div>
