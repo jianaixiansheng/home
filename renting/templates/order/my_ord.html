@@ -6,10 +6,9 @@
     <title>订单详情</title>
     <script src="{% static 'js/jquery-1.12.4.min.js ' %}"></script>
     <script>
-        $(function () {
-            $('.pay').click(function () {
-                //获取到你要提交的数据
-                oid1 = $('#oid').val()
+
+        function pay(maney) {
+            oid1 = $('.oid_'+maney).val()
                 //发起postAjax请求，携带数据
                 $.ajax({
                     'url':'{% url 'order:ord_end' %}',
@@ -20,21 +19,22 @@
                     }).success(function (data) {
                   if (data.res == 1){
 
-                      alert('验证码发送成功')
+                     alert('ok')
+                      window.open('http://127.0.0.1:8000/order/my_ord/')
+
                   }if(data.res == 0){
-                      //跳转到首页
-                      alert('验证码发送失败')
+
                   }
                 })
+        }
 
-            })
-        })
 </script>
     <script>
-        $(function () {
-            $('.cancel').click(function () {
-                // 获取到你要往后台传递的数据
-                oid1 = $('#oid').val()
+
+
+        function cancel(cal) {
+
+                oid1 = $('.oid_'+cal).val()
                 //发起post类型的Ajax请求，携带数据
                 $.ajax({
                     'url':'{% url 'order:cel' %}',
@@ -45,22 +45,24 @@
                 }).success(function (data) {
                     if (data.res == 0){
                         alert('成功')
+                        window.open('http://127.0.0.1:8000/order/cancel/')
                     }if (data.res==1){
                         alert('失败')
                     }
                 })
-            })
-        })
+        }
     </script>
 </head>
 <body>
 <br>
 <div style="width: 200px;height: 10px;margin-left: 48px">
-    <img style="width: 200px;height: 100px;" src="{% static 'img/5671aebc2bde91492f2e539bb702536.png' %}" alt="" >
+    <a href="{% url 'detail:index' %}"><img style="width: 200px;height: 100px;" src="{% static 'img/5671aebc2bde91492f2e539bb702536.png' %}" alt="" ></a>
+
 </div>
-<div style="margin-left: 30px;margin-top: 50px" >
+<div style="margin-left: 30px;margin-top: 50px" id="ord">
     {% for foo in hname %}
-        <input type="button" value="{{ foo.8 }}" id="oid" style="display: none">
+
+
        <table class="table table-condensed" style="width: 1300px;height: 500px;z-index: 9999" border="2" cellspacing="20"  width="50">
         <caption style="text-align: center;font-size: 40px;left: 300px">租房订单</caption>
         <tr style="margin-top: 30px">
@@ -83,13 +85,23 @@
          <tr style="top: 50px">
 
             <td style="width: 100px" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总金额：￥{{ foo.2 }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" value="支付" class="pay">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" value="取消" class="cancel">
+                <input type="hidden" value="{{ foo.8 }}" class="oid_{{ foo.8 }}">
+                {% if foo.0 == '支付成功' %}
+                    <input type="button" value="取消" class="cancel" onclick="cancel({{ foo.8 }})">
+                    {% else %}
+                    <input type="button" value="支付" class="pay" onclick="pay({{ foo.8 }})">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="取消" class="cancel" onclick="cancel({{ foo.8 }})">
+                {% endif %}
+
+
             </td>
            </tr>
          </table>
+        <img src="" alt="" id="erweima">
+    {% empty %}
+        <div style="text-align: center;font-size: 30px;margin-top: 200px">暂无订单信息!</div>
+
     {% endfor %}
-</div>
-<a href="{% url 'detail:index' %}">返回首页</a>
+ </div>
 </body>
 </html>

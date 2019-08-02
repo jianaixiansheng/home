@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'body', # 首页
     'order', # 订单系统
-    'detail' #房屋详情以及评论功能
+    'detail' , #房屋详情以及评论功能
+    'order.templatetags',
+
 ]
 
 MIDDLEWARE = [
@@ -67,7 +69,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{'status_ord':'order.templatetags.status_ord'}
         },
+
     },
 ]
 
@@ -129,3 +133,4 @@ STATIC_URL = '/static/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'detail/../body/../detail/static/media')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL="/media/"
+
