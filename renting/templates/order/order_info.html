@@ -31,7 +31,7 @@ function myFunction() {
 <form action="{% url 'order:ding' %}" method="post">
     {% csrf_token %}
 <div style="margin-left: 50px">
-    <img style="width: 200px;" src="{% static 'img/5671aebc2bde91492f2e539bb702536.png' %}" alt="" >
+    <a href="{% url 'detail:index' %}"><img style="width: 200px;" src="{% static 'img/5671aebc2bde91492f2e539bb702536.png' %}" alt="" ></a>
 </div>
 
 ------------------------------------------------------------------------------------------------
@@ -42,8 +42,6 @@ function myFunction() {
 
 <input type="date"  name="enter" id="phone" minlength="1">---
 <input type="date"  name="level" id="phone1" minlength="1">
-
-
     </span>
 </div>
 --------------------------------------------------------------------------------------------------
@@ -132,7 +130,7 @@ function myFunction() {
 
     <br>
     <br>
-        <li style="width: 500px;list-style-type:none;">押金  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥{{ housename.house_price }}</li>
+        <li style="width: 500px;list-style-type:none;">押金  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥{{ housename.house_cash }}</li>
 
     ——————————————————
 

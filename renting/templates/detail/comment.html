@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>comment</title>
-</head>
-<body>
+{% extends 'detail/detail.html' %}
+{% load static %}
 
-<form action="{% url 'detail:comment' hid=a.id%}" method="post">
-{% csrf_token %}
-请输入您对房子的评价<input type="text" name="comm">
-<input type="submit" value="发表">
-</form>
-{{ errmsg }}
-</body>
-</html>
+{% block a %}
+评论页面
+{% endblock %}
+
+{% block lunbo %}
+    <div class="container">
+	<div class="buy-single-single">
+			<div class="col-md-9 single-box">
+       <div class=" buying-top">
+			<div class="flexslider">
+                <ul class="slides">
+                  {% for foo in pic %}
+                    <li data-thumb="{% static 'images/bo2.jpg' %}">
+                        <img src="/detail{{ foo.Image.url }}" style="width: 1000px;height: 500px;" />
+                    </li>
+                  {% endfor %}
+                </ul>
+</div>
+{% endblock %}
+
+{% block comments %}
+    <form action="{% url 'detail:comment' hid=a.id%}" method="post">
+    {% csrf_token %}
+        请输入您对房子的评价<textarea  name="comm" style="height: 300px;"></textarea>>
+    <input type="submit" value="发表">
+    </form>
+{% endblock %}

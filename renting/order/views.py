@@ -36,7 +36,6 @@ def detail(request):
     user_id = request.session.get('u_id')
     if user_id:
         det = house.objects.filter(house_or=0)
-
         return render(request,'order/detail.html',{"a":det})
     else:
         return redirect('order:login')
@@ -126,9 +125,7 @@ def my_ord(request):
     uname = UserInfo.objects.get(id=uid)
     # 去订单中获取未取消的订单
     cancel = Order.objects.filter(order_fk_user=uid, order_status__in=[0,1])
-
     info = []
-
     for i in cancel:  # 订单信息
         # print(i.id)
         one = []
@@ -145,16 +142,7 @@ def my_ord(request):
         one.append(h.house_addr)
         one.append(i.id)
         info.append(one)
-
-
-
-
     return render(request,'order/my_ord.html',{"hname":info,"uname":uname})
-
-
-
-
-
 
 def my_ord_can(request):
     """
@@ -177,7 +165,6 @@ def my_ord_can(request):
     cancel = Order.objects.filter(order_fk_user=uid,order_status__in=[2,3])
     print('我是取消的',cancel)
     info = []
-
     for i in cancel: # 订单信息
         one = []
         b=men.objects.get(men_fk_order=i.id) # 入住人
@@ -220,7 +207,6 @@ def ord_end(request):
     a.save()
 
     if oid:
-
         return JsonResponse({"res":1})
     else:
         return JsonResponse({"res": 0})
@@ -243,8 +229,4 @@ def cel(request):
         return JsonResponse({"res":0})
     else:
         return JsonResponse({"res":1})
-
-
-
-
 # 订单页面（我的房租订单）
