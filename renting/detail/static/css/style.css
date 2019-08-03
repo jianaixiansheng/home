@@ -3580,10 +3580,12 @@ figure.effect-layla h4.effect2 {
 	padding:3em 0 0;
 }
 .box-img {
-  width: 20%;
+	width: 200px;
+	height: 300px;
 }
 .box-text {
-  width: 78%;
+	width: 200px;
+	height: 300px;
 }
 .nav-page {
   text-align: center;

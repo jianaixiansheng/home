@@ -48,16 +48,9 @@ def home_detail(request,hid):
         u = UserInfo.objects.get(id=u_id)
         home_info = house.objects.get(id=hid)
         pic = Photo.objects.filter(image_fk_id=hid)
-        comment = Comment.objects.filter(comment_fk_house_id=hid,comment_connent__isnull=False)
-        # #分页
-        # paginator = Paginator(comment,5)
-        # #获取第n页的内容
-        # if pindex =='':
-        #     pindex = 1
-        # else:
-        #     pindex = pindex
-        # page = paginator.page(pindex)
-        return render(request,'detail/detail.html',{"home_info":home_info,"pic":pic,"comment":comment,"u":u})
+        comment = Comment.objects.filter(comment_fk_house_id=hid,comment_connent__isnull=False)[0:5]
+        all_home = house.objects.all()[0:5]
+        return render(request,'detail/detail.html',{"home_info":home_info,"pic":pic,"comment":comment,"u":u,'all_home':all_home})
     else:
         home_info = house.objects.get(id=hid)
         pic = Photo.objects.filter(image_fk_id=hid)
@@ -95,7 +88,8 @@ def comment(request,hid):
             a = house.objects.get(id=hid)
             home_info = house.objects.get(id=hid)
             pic = Photo.objects.filter(image_fk_id=hid)
-            return render(request,'detail/comment.html',{"u":u,'a':a,'home_info':home_info,'pic':pic})
+            all_home = house.objects.all()[0:5]
+            return render(request,'detail/comment.html',{"u":u,'a':a,'home_info':home_info,'pic':pic,'all_home':all_home})
         else:
             return render(request,'detail/jump.html')
     else:
@@ -124,7 +118,7 @@ def reply_comment(request,hid):
         home_id = request.session['home.id']
         # print(a)
         return render(request,'detail/detail.html',{"u":u,'home':home_id})
-@csrf_exempt
+
 def replay_comment_1(request):
     comm2 = request.POST.get('comm')
     print('我是房东回复的评论',comm2)

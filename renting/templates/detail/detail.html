@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon"  href="{% static 'images/t.png' %}" >
 <title>{% block a %}
 Single
 {% endblock %}</title>
@@ -32,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             d = $('#replay').val()
             h = $("#homeid").val()
             $.ajax({
-                "url":'/detail/replay_comment_1/',
+                "url":'{% url 'detail:replay_comment_1' %}',
                 'type':'post',
                 'data':{'comm':d,'commentid':c,'home_id':h,'userid':b},
                 'dataType':'json',
@@ -179,20 +180,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class=" container">
 	<h3><span>Lor</span>em</h3> 
 	<!---->
-{#	<div class="menu-right">#}
-{#		 <ul class="menu">#}
-{#			<li class="item1"><a href="#">菜单<i class="glyphicon glyphicon-menu-down"> </i> </a>#}
-{#			<ul class="cute">#}
-{#				<li class="subitem1"><a href="#">购买</a></li>#}
-{#				<li class="subitem2"><a href="#">出租 </a></li>#}
-{#				<li class="subitem3"><a href="#">旅馆 </a></li>#}
-{#				<li class="subitem1"><a href="#">转售 </a></li>#}
-{#				<li class="subitem2"><a href="#">公寓</a></li>#}
-{#				<li class="subitem3"><a href="#">经销商 </a></li>#}
-{#			</ul>#}
-{#		</li>#}
-{#		</ul>#}
-{#	</div>#}
 	<div class="clearfix"> </div>
 		<!--initiate accordion-->
 		<script type="text/javascript">
@@ -303,70 +290,44 @@ erv.style.display="none";
 
 					</div>
 		</div>
+{% block c %}
+
+
 		<div class="col-md-3">
 			<div class="single-box-right right-immediate">
-		     	<h4>附近方圆</h4>
-				<div class="single-box-img ">
-					<div class="box-img">
+		     	<h4>附近房源</h4>
 
-						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl.jpg' %}" alt=""></a>
+				<div class="single-box-img ">
+
+					<div class="box-img" >
+                           <a href="detail.html"><img class="img-responsive" src="{% static 'images/sb1.jpg' %}" alt="" style="margin-top: 20px"></a>
+                            <a href="detail.html"><img class="img-responsive" src="{% static 'images/sl1.jpg' %}" alt="" style="margin-top: 23px">
+                                <a href="detail.html"><img class="img-responsive" src="{% static 'images/sl2.jpg' %}" alt="" style="margin-top: 16px"></a>
+                                <a href="detail.html"><img class="img-responsive" src="{% static 'images/sl3.jpg' %}" alt="" style="margin-top: 18px"></a>
+                        <a href="detail.html"><img class="img-responsive" src="{% static 'images/sl4.jpg' %}" alt="" style="margin-top: 19px"></a>
 					</div>
-					<div class="box-text">
-						<p><a href="#">马可波罗的小屋</a></p>
+
+                    {% for foo in all_home %}
+					<div class="box-text" style="margin-top: 30px">
+						<p><a href="{% url 'detail:home_detail' hid=foo.id %}">{{ foo.house_intro }}</a></p>
 						<a href="#" class="in-box">查看详情</a>
 					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="single-box-img">
-					<div class="box-img">
-						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl1.jpg' %}" alt=""></a>
-					</div>
-					<div class="box-text">
-						<p><a href="#">北苑地铁附近阳光房</a></p>
-						<a href="#" class="in-box">查看详情</a>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="single-box-img">
-					<div class="box-img">
-						<a href="#"><img class="img-responsive" src="{% static 'images/sl2.jpg' %}" alt=""></a>
-					</div>
-					<div class="box-text">
-						<p><a href="#">观国贸夜景 美式装修 百寸高清智能投影大床房</a></p>
-						<a href="#" class="in-box">查看详情</a>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="single-box-img">
-					<div class="box-img">
-						<a href="detail.html"><img class="img-responsive" src="{% static 'images/sl3.jpg' %}" alt=""></a>
-					</div>
-					<div class="box-text">
-						<p><a href="#">『无尽夏』八达岭长城世园会别墅第二层整套
-</a></p>
-						<a href="#" class="in-box">查看更多</a>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="single-box-img">
-					<div class="box-img">
-						<a href="#"><img class="img-responsive" src="{% static 'images/sl4.jpg' %}" alt=""></a>
-					</div>
-					<div class="box-text">
-						<p><a href="#">东阁2号-四号线近北京南站天坛医院西单</a></p>
-						<a href="#" class="in-box">查看更多</a>
-					</div>
-					<div class="clearfix"> </div>
+                    {% endfor %}
+					<div class="clearfix"></div>
 				</div>
 		 </div>
-            <h4 style="margin: 146px 3px;font-family: 方正粗黑宋简体">房源热评♥</h4>
+        {% endblock %}
+{#<h4>房源热评</h4>#}
+            <h4 style="margin: 146px 3px;font-family: 方正粗黑宋简体;">房源热评❤</h4>
+
         {% block comments %}
+
             <div style="width: 362px;height: 500px;margin-top: -126px">
                 <ul>
                     {% for foo in comment %}
                         <li id="user_name">{{ foo.comment_fk_user.user_name }}
                             <input type="text" value="{{ foo.comment_fk_user.id }}" name="userid" style="display: none" id="comment_fk_user">
-                            <input type="text" style="display: none" value="{{ foo.id }}" name="commentid" id="bcommentid">{{ foo.id }}
+                            <input type="text" style="display: none" value="{{ foo.id }}" name="commentid" id="bcommentid">
                         <div>{{ foo.comment_connent }}<a href="javascript:;" class="reply_btn" ></a>//:{{ foo.comment_reply }}</div>
 
                             <input type="text" style="display: none" value="{{ foo.comment_fk_house.id }}" name="home_id" id="homeid">
@@ -389,11 +350,11 @@ erv.style.display="none";
 			<div class="content-bottom-in">
 					<ul id="flexiselDemo1">			
 						<li><div class="project-fur">
-								<a href="detail.html" ><img class="img-responsive" src="{% static 'images/pi.jpg' %}" alt="" />	</a>
+								<img class="img-responsive" src="{% static 'images/pi.jpg' %}" alt="" />
 									<div class="fur">
 										<div class="fur1">
 		                                    <span class="fur-money">$2.44 Lacs - 5.28 Lacs </span>
-		                                    <h6 class="fur-name"><a href="detail.html">Contrary to popular</a></h6>
+		                                    <h6 class="fur-name">Contrary to popular</h6>
 		                                   	<span>Paris</span>
                                			</div>
 			                            <div class="fur2">
@@ -402,11 +363,11 @@ erv.style.display="none";
 									</div>					
 							</div></li>
 							<li><div class="project-fur">
-									<a href="detail.html" ><img class="img-responsive" src="{% static 'images/pi1.jpg' %}" alt="" />	</a>
+									<img class="img-responsive" src="{% static 'images/pi1.jpg' %}" alt="" />
 										<div class="fur">
 											<div class="fur1">
 			                                    <span class="fur-money">$2.44 Lacs - 5.28 Lacs </span>
-			                                   <h6 class="fur-name"><a href="detail.html">Contrary to popular</a></h6>
+			                                   <h6 class="fur-name">Contrary to popular</h6>
 			                                   	<span>Paris</span>
 	                               			</div>
 				                            <div class="fur2">
@@ -415,11 +376,11 @@ erv.style.display="none";
 										</div>					
 								</div></li>
 								<li><div class="project-fur">
-								<a href="detail.html" ><img class="img-responsive" src="{% static 'images/pi2.jpg' %}" alt="" />	</a>
+								<img class="img-responsive" src="{% static 'images/pi2.jpg' %}" alt="" />
 									<div class="fur">
 										<div class="fur1">
 		                                    <span class="fur-money">$2.44 Lacs - 5.28 Lacs </span>
-		                                   <h6 class="fur-name"><a href="detail.html">Contrary to popular</a></h6>
+		                                   <h6 class="fur-name">Contrary to popular</h6>
 		                                   	<span>Paris</span>
                                			</div>
 			                            <div class="fur2">
@@ -428,11 +389,11 @@ erv.style.display="none";
 									</div>					
 							</div></li>
 							<li><div class="project-fur">
-								<a href="detail.html" ><img class="img-responsive" src="{% static 'images/pi3.jpg' %}" alt="" />	</a>
+								<img class="img-responsive" src="{% static 'images/pi3.jpg' %}" alt="" />	
 									<div class="fur">
 										<div class="fur1">
 		                                    <span class="fur-money">$2.44 Lacs - 5.28 Lacs </span>
-		                                    <h6 class="fur-name"><a href="detail.html">Contrary to popular</a></h6>
+		                                    <h6 class="fur-name">Contrary to popular</h6>
 		                                   	<span>Paris</span>
                                			</div>
 			                            <div class="fur2">
