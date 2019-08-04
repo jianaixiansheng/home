@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="26c810be-0c5a-4a20-96aa-1a0fda41b7bf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/renting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/body/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/pay2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/self_Alipay.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_pay/支付宝.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/flexslider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/popuo-box.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/Oxygen-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/arr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/at.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/at1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/av.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ba1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ba2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ba3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ba4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/back1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bl1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bl2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bo2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/bo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ce5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ci7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/co.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/de9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ga.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ga1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ga2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ga3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ho1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/img-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lg9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/lo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pc1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pc2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pc3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pc4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pc5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ph1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pi1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pi2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pi3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/pr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sb6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sl1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sl2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sl3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/sl4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ss.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ss1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ss2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/ss3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/star1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/t.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/te.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/te1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/images/te2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/easyResponsiveTabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/jquery.flexisel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/jquery.flexslider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/jquery.magnific-popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/responsiveslides.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/static/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/image/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/css/CivilMilitaryIntegration/ShoppingCartAdress.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/img/5671aebc2bde91492f2e539bb702536.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/img/CivilMilitaryIntegration/CooperationZone/panner0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/img/ff4eb2450bb1fd02321d239bb2c414d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/js/CivilMilitaryIntegration/ShoppingCart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/js/jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/pay/pay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/pay/pay2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/pay/pay3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/bootstrap/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/eleme-ui/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/eleme-ui/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/static/plugins/vue/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templatetags/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templatetags/status_ord.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/renting/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/renting/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/renting/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/renting/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/comment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/jump.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail/order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/cancel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/ceshi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/end.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/erweima.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/fabu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/huiyuan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/landlord.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/my_ord.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/order_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/register.html" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="495733801">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="865" />
+    <option name="y" value="10" />
+    <option name="width" value="1065" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="renting" type="Python.DjangoServer" factoryName="Django server">
+      <module name="renting" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26c810be-0c5a-4a20-96aa-1a0fda41b7bf" name="Default Changelist" comment="" />
+      <created>1564923434348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564923434348</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>

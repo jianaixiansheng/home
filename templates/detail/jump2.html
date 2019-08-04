@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon"  href="{% static 'images/t.png' %}" >
+</head>
+<body>
+<p>您还没有居住过该房屋噢！想要参与评论，快去下单吧，还有<span id="sp">3</span>秒跳转到首页...</p>
+<script>
+    onload=function () {
+        setInterval(go,1000)
+    };
+    var x=2;
+    function go() {
+
+        if (x>=0){
+            document.getElementById("sp").innerText=x;
+        }else {
+            location.href="{% url 'detail:index' %}";
+        }
+        x--;
+    }
+</script>
+</body>
+</html>

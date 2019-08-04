@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录演示</title>
+    <script src="/login/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        function get_code() {
+            phone = $("#phone").val()
+            $.post('/verify_app/get_phone_code/',{'phone':phone},function (data) {
+                alert(typeof data)
+               if (data.Message=="OK"){
+                   alert('验证码已经发送到您的手机，请注意查收！')
+                   frm_login.login.focus()
+               }
+            },"json")
+
+        }
+    </script>
+
+</head>
+<body style="text-align: center" onload="frm_login.userName.focus()">
+<h1>欢迎来到登录页面</h1>
+<form name="frm_login" method="post" action="/templates/login/login">
+    {%  csrf_token %}
+    <p>请输入手机号：<input type="text" id="user_tel" name="user_tel"></p>
+    <p>{{ errmsg }}</p>
+    <p>请输入手机号码：<input type="tel" id="phone" name="phone" pattern="^(0|86|17951)?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}"/> </p>
+    <p>请输入手机验证码：
+        <input type="text" name="login" />
+        <input type="button" value="获取手机验证码" onclick="get_code()">
+    </p>
+    <p>{{ code_error }}</p>
+    <p><input type="submit" value="登录"> <input type="reset" value="重置">
+    </p>
+    <p>{{ errmsg }}</p>
+</form>
+</body>
+</html>
+
