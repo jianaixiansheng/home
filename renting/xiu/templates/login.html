@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form action="{% url 'log' %}" method="post">
+    {% csrf_token %}
+    <table>姓名<input type="text" name="name"></table>
+    <table>性别<input type="text" name="sex"></table>
+    <table>密码<input type="text" name="password"></table>
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>
