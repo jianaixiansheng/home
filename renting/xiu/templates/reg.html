@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<form action="{% url 're' %}" method="post">
+    {% csrf_token %}
+    <table>注册名字<input type="text" name="name" required="required"></table>
+    <table>注册性别<input type="text" name="sex" required="required"></table>
+    <table>注册密码<input type="password" name="password" required="required"></table>
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

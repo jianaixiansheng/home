@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>已经发布过用户的信息</title>
+
+</head>
+<body>
+<form action="{% url 'already_house' %}">
+{% for already in already %}
+    <p >用户<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none" >{{ already.id }}</a></p>
+    <p>地址：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_addr}}</a></p>
+    <p>单价：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_price }}</a></p>
+    <p>房屋简介：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_intro }}</a></p>
+    <p>户型：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_type }}</a></p>
+    <p>宜居人数：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_num }}</a></p>
+    <p>床铺数量：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_bed }}</a></p>
+    <p>床铺规格：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_bed_size }}</a></p>
+    <p>房屋描述：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_describe }}</a></p>
+    <p>内部情况：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_status }}</a></p>
+    <p>交通情况：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_traffic }}</a></p>
+    <p>周边情况：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_env }}</a></p>
+    <p>配套设施：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_set }}</a></p>
+    <p>入住须知：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_have_to }}</a></p>
+    <p>押金：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_cash }}</a></p>
+    <p>住房要求：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_req }}</a></p>
+    <p>预定方式：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_way }}</a></p>
+    <p>退订方式：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_debook }}</a></p>
+    <p>当前用户：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_fk }}</a></p>
+    <p>房子的状态：<a href="{% url 'modifier' c_id=already.id %}" style="text-decoration:none">{{ already.house_or }}</a></p>
+{% endfor %}
+</form>
+</body>
+</html>

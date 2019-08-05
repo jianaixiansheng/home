@@ -1,0 +1,30 @@
+
+#All{
+    width: 100%;
+    height: 5000px;
+    position: relative;
+    background-color: rgb(245,245,245);
+}
+#nav{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+}
+
+#header{
+    width: 80%;
+    height:4500px;
+    /*background-color: rgb(245,245,245);*/
+    background-color: white;
+    position: absolute;
+    top: 250px;
+    left: 130px;
+}
+
+.boot{
+    text-align: center;
+    font-size: smaller;
+    position: relative;
+    top: -100px;
+}
+

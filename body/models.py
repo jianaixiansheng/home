@@ -67,8 +67,11 @@ class house(models.Model):
     house_fk = models.ForeignKey('UserInfo',on_delete=models.CASCADE)
     # 房子状态（是否出租,0为未出租，1为出租）
     house_or = models.IntegerField(default=0,null=True)
-    # #房屋所关联的图片
-    # house_pic= models.ForeignKey('Photo',on_delete=models.CASCADE)
+
+
+
+    # 外键 关联 图片
+    pic_fk = models.ForeignKey('Photo',on_delete=models.CASCADE, null=True)
 
 
 class Photo(models.Model):

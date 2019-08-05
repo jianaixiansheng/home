@@ -1,0 +1,27 @@
+
+#All{
+    width: 100%;
+    height: 2500px;
+    position: relative;
+    /*background-color: lightblue;*/
+    background-color: rgb(245,245,245);
+    /*background-image: url("../../templates/index/img/background/dong.gif");*/
+}
+#nav{
+    width: 100%;
+    height: 100px;
+    /*background-color: #00B0D8;*/
+    background-color: rgb(245,245,245);
+    /*background-image: url("../../templates/index/img/background/dong.gif");*/
+    position: absolute;
+}
+
+#header{
+    width: 80%;
+    height:2000px;
+    background-color: white;
+    /*background-image: url("../../templates/index/img/background/嘿嘿.jpg");*/
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}

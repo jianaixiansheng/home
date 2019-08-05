@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+</head>
+<body>
+<h1>修改页面</h1>
+<form action="{% url 'modifier' c_id=a.id %}" method="post">
+    <p>地址：<input type="text" name="house_addr" value="{{ a.house_addr}}"></p>
+    <p>单价：<input type="text" name="house_price" value="{{ a.house_price }}"></p>
+    <p>房屋简介：<input type="text" name="house_intro" value="{{ a.house_intro }}"></p>
+    <p>户型：<input type="text" name="house_type" value="{{ a.house_type }}"></p>
+    <p>宜居人数：<input type="text" name="house_num" value="{{ a.house_num }}"></p>
+    <p>床铺数量：<input type="text" name="house_bed" value="{{ a.house_bed }}"></p>
+    <p>床铺规格：<input type="text" name="house_bed_size" value="{{ a.house_bed_size }}"></p>
+    <p>房屋描述：<input type="text" name="house_describe" {{ a.house_describe }}></p>
+    <p>内部情况：<input type="text" name="house_status" value="{{ a.house_status }}"></p>
+    <p>交通情况：<input type="text" name="house_traffic" value="{{ a.house_traffic }}"></p>
+    <p>周边情况：<input type="text" name="house_env" value="{{ a.house_env }}"></p>
+    <p>配套设施：<input type="text" name="house_set" value="{{ a.house_set }}"></p>
+    <p>入住须知：<input type="text" name="house_have_to" value="{{ a.house_have_to }}"></p>
+    <p>押金：<input type="text" name="house_cash" value="{{ a.house_cash }}"></p>
+    <p>住房要求：<input type="text" name="house_req" value="{{ a.house_req }}"></p>
+    <p>预定方式：<input type="text" name="house_way" value="{{ a.house_way }}"></p>
+    <p>退订方式：<input type="text" name="house_debook" value="{{ a.house_debook }}"></p>
+    <p>外键：<input type="text" name="house" value="{{ a.house }}"></p>
+    <p>房子的状态：<input type="text" name="house_or" value="{{ a.house_or }}"></p>
+    <p>
+        <input type="submit" value="保存">
+        <a href="{% url 'already_house' %}" style="text-decoration:none ">查看</a>
+    </p>
+</form>
+
+</body>
+</html>

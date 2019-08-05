@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 
 
     'login', # 登录注册
+
+    'xiu',
+    'poll',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +140,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL="/media/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'login/../login/static')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'xiu/../static'),
+]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'poll/static/uploads/').replace('\\', '/')
+'''
+设置静态文件路径为主目录下的media文件夹
+'''
+MEDIA_URL = '/media/'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

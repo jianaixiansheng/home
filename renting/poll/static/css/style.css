@@ -1,0 +1,53 @@
+body{width: 200vh; height: 100vh;
+	position: relative;
+	color: #020202;background: linear-gradient(-45deg, rgb(0, 0, 0),
+rgba(14, 14, 14, 0.7), rgba(2, 1, 2, 0.7), rgb(0, 0, 0),
+rgba(2, 2, 2, 0.84));background-size: 200% 200%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+.container{width: 100%; height: 100%;}
+
+.login1{
+	width: 400px;
+	height: 500px;
+	background-color: #ff2302;
+	position: absolute;
+	margin-left: 650px;
+	margin-top: 150px;
+}
