@@ -227,7 +227,7 @@ div#preloader {
     padding-bottom: 90px;
 }
 .section-titleBar{
-    background: url("../../static/index/img/background/about-cta-bg.jpg");
+    background: url("../background/about-cta-bg.jpg");
     margin-bottom: 60px;
     position: relative;
 }

@@ -9,7 +9,7 @@ def uploadPic(request):
     # 初始化将要返回的数据
     obj = dict()
     if request.method == 'GET':
-        return render(request,"index180.html")
+        return render(request, 'xiu/index180.html')
     else:
         files = request.FILES.getlist('banners') # input 标签中的name值
         # print(files)

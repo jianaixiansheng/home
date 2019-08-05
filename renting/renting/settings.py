@@ -57,7 +57,7 @@ ROOT_URLCONF = 'renting.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'xiuxiu/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -89,7 +89,6 @@ DATABASES = {
         'PORT':3306,
     }
 }
-
 
 
 # Password validation
@@ -129,8 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'xiu/../static'),
 ]
 
 
@@ -139,3 +139,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'poll/static/uploads/').replace('\\', '/')
 设置静态文件路径为主目录下的media文件夹
 '''
 MEDIA_URL = '/media/'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

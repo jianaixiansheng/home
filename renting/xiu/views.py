@@ -9,12 +9,12 @@ from django.http import HttpResponse
 # 展示首页
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'xiu/index.html')
 
 # 添加发布房源信息
 def house_info(request):
     if request.method == "GET":
-        return render(request, 'house_info.html')
+        return render(request, 'xiu/house_info.html')
     else:
         # 地址
         house_addr = request.POST.get("house_addr")
@@ -59,19 +59,19 @@ def house_info(request):
         if a:
             return redirect('already_house')
         else:
-            return render(request,'house_info.html')
+            return render(request, 'xiu/house_info.html')
 
 
 # 查看已经发布房源信息的用户
 def already_hose(request):
     already = house.objects.all()
-    return render(request, 'already_house.html', {"already":already})
+    return render(request, 'xiu/already_house.html', {"already":already})
 
 # 修改发布房源的用户信息
 def modifier(request,c_id):
     if request.method == "GET":
         a = house.objects.get(id=c_id)
-        return render(request, "modifier_house.html", {"a":a})
+        return render(request, "xiu/modifier_house.html", {"a":a})
     else:
         a = house.objects.get(id=c_id)
         a.house_addr = request.POST.get("house_addr")

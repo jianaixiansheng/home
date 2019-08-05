@@ -69,6 +69,11 @@ class house(models.Model):
     house_or = models.IntegerField(default=0,null=True)
 
 
+
+    # 外键 关联 图片
+    pic_fk = models.ForeignKey('Photo',on_delete=models.CASCADE, null=True)
+
+
 class Photo(models.Model):
     """相册表"""
     Image = models.ImageField(upload_to='image')
