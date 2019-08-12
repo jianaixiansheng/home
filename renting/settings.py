@@ -41,10 +41,7 @@ INSTALLED_APPS = [
     'order', # 订单系统
     'detail' , #房屋详情以及评论功能
     'order.templatetags',
-
-
     'login', # 登录注册
-
     'xiu',
     'poll',
 ]
@@ -93,7 +90,7 @@ DATABASES = {
         'USER': 'root',  # 用户名
         'PASSWORD': '159357qt..',  # 密码
         'HOST': '39.105.35.227',
-        'PORT': '3306',
+        'PORT': 3306,
     }
 }
 
@@ -137,19 +134,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'detail/../body/../detail/static/media')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL="/media/"
+MEDIA_URL = "/media/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'login/../login/static')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'xiu/../static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'poll/static/uploads/').replace('\\', '/')
+#
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'poll/static/uploads/').replace('\\', '/')
 '''
 设置静态文件路径为主目录下的media文件夹
 '''
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

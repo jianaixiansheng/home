@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+    {% load static %}
+</head>
+<body style="text-align: center;color: white ;background-image: url('{% static 'index/img/background/house.jpg' %}')">
+<h1>修改页面</h1>
+<form action="{% url 'xiu:modifier' c_id=a.id %}" method="post">
+
+
+    <div>
+    <table class="ere" style="border: #1abde7;width: 1000px;height: 400px;position: absolute;left: 200px;">
+        <tr>
+    <th>房屋地址：<input type="text" name="house_addr" value="{{ a.house_addr}}"></th>
+    <th>房屋单价：<input type="text" name="house_price" value="{{ a.house_price }}"></th>
+    <th>房屋简介：<input type="text" name="house_intro" value="{{ a.house_intro }}"></th>
+    <th>房屋户型：<input type="text" name="house_type" value="{{ a.house_type }}"></th>
+    <th>宜居人数：<input type="text" name="house_num" value="{{ a.house_num }}"></th>
+        </tr>
+        <tr>
+    <th>床铺数量：<input type="text" name="house_bed" value="{{ a.house_bed }}"></th>
+    <th>床铺规格：<input type="text" name="house_bed_size" value="{{ a.house_bed_size }}"></th>
+    <th>房屋描述：<input type="text" name="house_describe" {{ a.house_describe }}></th>
+    <th>内部情况：<input type="text" name="house_status" value="{{ a.house_status }}"></th>
+    <th>交通情况：<input type="text" name="house_traffic" value="{{ a.house_traffic }}"></th>
+        </tr>
+    </table>
+    </div>
+    <div>
+        <table style="border: #1abde7;width: 1000px;height: 400px;position: absolute;left: 200px;top: 500px">
+        <tr>
+    <th>周边情况：<input type="text" name="house_env" value="{{ a.house_env }}"></th>
+    <th>配套设施：<input type="text" name="house_set" value="{{ a.house_set }}"></th>
+    <th>入住须知：<input type="text" name="house_have_to" value="{{ a.house_have_to }}"></th>
+    <th>房屋押金：<input type="text" name="house_cash" value="{{ a.house_cash }}"></th>
+    <th>住房要求：<input type="text" name="house_req" value="{{ a.house_req }}"></th>
+    </tr>
+    <tr>
+    <th>预定方式：<input type="text" name="house_way" value="{{ a.house_way }}"></th>
+    <th>退订方式：<input type="text" name="house_debook" value="{{ a.house_debook }}"></th>
+    <th>当前用户：<input type="text" name="house_fk" value="{{ a.house_fk }}"></th>
+    <th>房子状态：<input type="text" name="house_or" value="{{ a.house_or }}"></th>
+    <th>
+        <input type="submit" value="保存">
+        <a href="{% url 'xiu:already_house' a.id %}" style="text-decoration:none ">查看</a>
+    </th>
+    </tr>
+</table>
+</div>
+</form>
+</body>
+</html>

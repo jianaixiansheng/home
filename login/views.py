@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from django.http import HttpResponse,JsonResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
 from body.models import *
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image, ImageDraw, ImageFont
@@ -24,16 +24,16 @@ def register(request):
         yzm = request.POST.get('yzm')
         print('短信验证码',yzm)
         print('短信验证码',request.session['phone_code'])
-        #检查两次输入的密码是否一致
+        #  检查两次输入的密码是否一致
 
         if yzm != request.session['phone_code']:
             return JsonResponse({'res':2})
-        #检查手机号是否已经存在
+        #  检查手机号是否已经存在
         try:
             UserInfo.objects.get(user_tel=user_tel)
-            return JsonResponse({'res':3})
+            return JsonResponse({'res': 3})
         except:
-            UserInfo.objects.create(user_name=username,user_pwd=password,user_tel=user_tel)
+            UserInfo.objects.create(user_name=username, user_pwd=password, user_tel=user_tel)
             return redirect('login')
 
 
@@ -49,26 +49,20 @@ def login(request):
         user_name = request.POST.get("username")
         user_name = int(user_name)
         user_pwd = request.POST.get("password")
-        print('登录的账户',user_name)
-        print('登录的密码',user_pwd)
+        print('登录的账户', user_name)
+        print('登录的密码', user_pwd)
         try:
             g = UserInfo.objects.get(user_tel=user_name,user_pwd=user_pwd)
             if g:
                 request.session['u_id'] = g.id
-                return redirect('detail:index')
+                return redirect('xiu:index')
         except Exception:
             print(2)
             errmsg = '账号或密码错误'
-            return render(request,'login/demo.html',{"errmsg":errmsg})
+            return render(request, 'login/demo.html', {"errmsg": errmsg})
 
 
-def index(request):
-    """
-    首页
-    :param request:
-    :return:
-    """
-    return HttpResponse("首页")
+
 
 
 def generate_code(request):
@@ -82,18 +76,18 @@ def generate_code(request):
     # 定义变量，用于画面的背景色、宽、高
     bgcolor = (random.randrange(20, 100), random.randrange(
         20, 100), 255)
-    width = 100 # 验证码图片的宽度
-    height = 25 # 验证码图片的高度
+    width = 100  # 验证码图片的宽度
+    height = 25  # 验证码图片的高度
     # 创建画面对象
     im = Image.new('RGB', (width, height), bgcolor) # 实例化图片对象并指定宽高和背景颜色
     # 创建画笔对象
-    draw = ImageDraw.Draw(im) # 基于im对象得到画笔对象
+    draw = ImageDraw.Draw(im)  # 基于im对象得到画笔对象
     # 调用画笔的point()函数绘制噪点
     for i in range(0, 100):
         # (2,5)
         xy = (random.randrange(0, width), random.randrange(0, height))
         fill = (random.randrange(0, 255), 255, random.randrange(0, 255))
-        draw.point(xy, fill=fill) # 使用画笔画噪点并指定噪点的颜色
+        draw.point(xy, fill=fill)  # 使用画笔画噪点并指定噪点的颜色
 
     # 定义验证码的备选值
     str1 = 'ABCD123EFGHIJK456LMNOPQRS789TUVWXYZ0'
@@ -121,7 +115,7 @@ def generate_code(request):
     # 将图片保存在内存中，文件类型为png
     im.save(buf, 'png')
     # 将内存中的图片数据返回给客户端，MIME类型为图片png
-    return HttpResponse(buf.getvalue(), 'image/png')
+    return HttpResponse(buf.getvalue(), 'images/png')
 
 
 ##############################################改动后#################################################################
@@ -233,6 +227,6 @@ def get_phone_code(request):
 
 def cancel(request):
     request.session.flush()
-    return redirect('detail:index')
+    return redirect('xiu:index')
 
 

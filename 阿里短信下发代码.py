@@ -10,7 +10,7 @@ from aliyunsdkcore.request import CommonRequest
 '''发送短信(手机,6位验证码)'''
 def send_sms(phone,code):
     client = AcsClient('LTAIEx3Gbdbceg2C', 'MsCoWUm3x2iXaIcvtqhQLi9yj6nHxX', 'cn-hangzhou')
-    
+
     #phone = '17600950805'
     #aa= '222222'
     code = "{'code':%s}"%(code)
@@ -21,19 +21,19 @@ def send_sms(phone,code):
     request.set_protocol_type('https') # https | http
     request.set_version('2017-05-25')
     request.set_action_name('SendSms')
-    
+
     request.add_query_param('RegionId', 'cn-hangzhou')
     request.add_query_param('PhoneNumbers', phone)
     request.add_query_param('SignName', '北网实训组')
     request.add_query_param('TemplateCode', 'SMS_165745016')
     request.add_query_param('TemplateParam',code )
-    
+
     response = client.do_action(request)
-    # python2:  print(response) 
+    # python2:  print(response)
     print(str(response, encoding = 'utf-8'))
-    
+
     return str(response, encoding = 'utf-8')
-   
+
 '''生成随机验证码: 数字表示生成几位,   True表示生成带有字母的  False不带字母的'''
 def get_code(n=6,alpha=True):
     s = '' # 创建字符串变量,存储生成的验证码

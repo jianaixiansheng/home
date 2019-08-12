@@ -76,8 +76,8 @@ class house(models.Model):
 
 class Photo(models.Model):
     """相册表"""
-    Image = models.ImageField(upload_to='image')
-    image_fk = models.ForeignKey('house',on_delete=models.CASCADE)
+    Image = models.ImageField(upload_to='images/')
+    image_fk = models.ForeignKey('house',on_delete=models.CASCADE,)
 
 
 class Order(models.Model):

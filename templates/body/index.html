@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+{#<link href="css/bootstrap_test.css" type="text/css" rel="stylesheet" media="all">#}
+{#<link href="css/style_test.css" type="text/css" rel="stylesheet" media="all">  #}
+{#<link rel="stylesheet" href="css/swipebox_test.css">    #}
+{#<link rel="stylesheet" href="css/flexslider_test.css" type="text/css" media="screen" />#}
+<link href="{% static 'css/bootstrap_test.css' %}" type="text/css" rel="stylesheet" media="all">
+<link href="{% static 'css/style_test.css' %}" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="{% static 'css/swipebox_test.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexslider_test.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{% static 'css/show_test.css' %}">
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+{#<link href="css/font-awesome.css" rel="stylesheet"> #}
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- js -->
+{#<script src="js/jquery-2.2.3.min.js"></script>#}
+<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+<!-- //js -->
+<!-- web-fonts -->  
+<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- //web-fonts -->
+</head>
+<body> 
+	<!-- banner -->
+	<div id="home" class="w3ls-banner" style="position: relative">
+        <div style=" text-align: center; position: absolute; z-index: -1;margin: 0 auto">
+            <img src="{% static 'image/1.jpg' %}" alt="" style="width: 1519px;opacity: 0.7; float: right;display:inline; ">
+        </div>
+		<!-- header -->
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+
+					<h1><a href="index.html">Welcome Harbour</a></h1>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+
+
+		<div class="banner-w3ltext">
+			<div class="container">
+				<h3>Welcome Harbour</h3>
+				<h2>LOOK FORWARD TO YOUR SWEET AND COMFIRTABLE</h2>
+				<a href="#myModal" class="wthree-btn" data-toggle="modal">Read more</a>
+			</div>
+		</div>
+		<!-- //banner-text -->
+	</div>
+	<!-- //banner -->
+	<!-- banner-bottom -->
+    {% if area %}
+    <form action="{% url 'screen'  %}" method="post" >
+        {% csrf_token %}
+
+	<div class="serach-w3agile">
+		<div class="container">
+			<div class="place-grids">
+				<form action="#" method="post">
+					<div class="col-md-2 col-xs-4 place-grid">
+						<h5 class="place-grids01">&emsp;每晚价格/元</h5>
+{#                        <input type="text" class="sel01" name="price" >#}
+                        <select name="price" id="" style="position: relative;width: 150px;height: 30px;left: 150px;top: 35px;padding: 0 2%;margin: 0;">
+                            <option value=""></option>
+                            <option value="300" style="text-align:center;">300到300以内</option>
+                            <option value="500" style="text-align:center;">500到500以内</option>
+                            <option value="900" style="text-align:center;">900到900以内</option>
+                            <option value="2000" style="text-align:center;">2000到2000以内</option>
+                            <option value="10000" style="text-align:center;">10000到10000以内</option>
+                            <option value="99999" style="text-align:center;">99999到99999以内</option>
+                        </select>
+					</div>
+					<div class="col-md-2 col-xs-4 place-grid">
+					</div>
+					<div class="col-md-2 col-xs-4 place-grid">
+						<h5 class="place-grids02">&emsp;宜居人数/人</h5>
+{#                        <input type="text" class="sel02" name="num">#}
+                        <select name="num" id="" style="position: relative;width: 150px;height: 30px;left: 47px;top: 35px;padding: 0 2%;margin: 0;">
+                            <option value=""></option>
+                            <option value="1" style="text-align:center;">1</option>
+                            <option value="2" style="text-align:center;">2</option>
+                            <option value="4" style="text-align:center;">4</option>
+                            <option value="6" style="text-align:center;">6</option>
+                            <option value="10" style="text-align:center;">10</option>
+                        </select>
+					</div>
+					<div class="col-md-2 col-xs-4 place-grid">
+					</div>
+					<div class="col-md-2 col-xs-4 place-grid">
+						<h5 class="place-grids03">&ensp;双床铺数量/张</h5>
+{#                        <input type="text" class="sel03" name="bed">#}
+                        <select name="bed" id="" style="position: relative;width: 150px;height: 30px;left: -50px;top: 35px;padding: 0 2%;margin: 0;">
+                            <option value=""></option>
+                            <option value="1" style="text-align:center;">1</option>
+                            <option value="2" style="text-align:center;">2</option>
+                            <option value="4" style="text-align:center;">4</option>
+                            <option value="6" style="text-align:center;">6</option>
+                        </select>
+					</div>
+					<div class="col-md-2 col-xs-4 place-grid">
+						<input type="submit" value="点击寻找">
+					</div>
+                </form>
+                    {% endif %}
+
+					<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+
+{#数据展示#}
+
+<div style="width: 1200px;height: 900px; margin: 0 auto; position: relative;">
+
+
+			<h3 class="w3title" style="position: relative; top: 60px;text-align: center">房屋展示</h3>
+			<p class="wthree-ttext" style="position: relative; top: 50px;text-align: center">Show you all the houses</p>
+
+
+    <div class="show02" style="position: relative; height: 600px; top: 80px;width: 1030px;left: 75px;">
+
+     <ul style="width: 1030px;height: 800px;">
+
+        {% if area %}
+
+        {% for i in result %}
+           <li id="box1" style="float: left; margin: 40px 7px 7px 20px ; list-style: none ">
+              <a href="#"><img src="{{ i.pic_fk.Image.url }}" alt="" style="width: 300px; height: 200px;"></a>
+           </li>
+         {% endfor %}
+    </ul>
+
+    <ul style="width: 1030px;height: 0; float: left">
+        {% for y in result %}
+    <li style="float: left; margin: 220px 20px 0 100px; list-style: none; position: relative; top: -770px;">
+        &ensp;{{ y.house_intro }}&ensp;
+    </li>
+{% endfor %}
+    </ul>
+        {% else %}
+            <br>
+            <br>
+        <h1 style="text-align: center">该地区没有港湾民宿</h1>
+      {% endif %}
+    </div>
+
+
+</div>
+
+{# 分页#}
+<div style="position: absolute; top: 1900px; left: 680px; margin: 10px 10px 10px 10px">
+{#  判断是否有上一页 #}
+{% if result.has_previous %}
+    <a href="{{ result.previous_page_number }}" style="margin: 0 20px 0 20px">上一页</a>
+{% endif %}
+
+{% for num in result.paginator.page_range %}
+    {% if result.number %}
+{#        <a href="{% url 'show_search' pid=num %}">{{ num }}</a>#}
+{#    {% else %}#}
+        <b style="margin: 0 1px">{{ num }}</b>
+    {% endif %}
+{% endfor %}
+{#  判断是否有下一页 #}
+{% if result.has_next %}
+    <a href="{{ result.next_page_number }}" style="margin: 0 20px 0 20px">下一页</a>
+{% endif %}
+    </div>
+
+
+
+	<!--最底部-->
+	<div class="footer" style="position: relative; top: 200px;">
+		<div class="container">
+			<div class="social-icon">
+			</div>
+			<p>Copyright &copy; 2017.Company name All rights reserved.More Templates 港湾民宿 - Collect from 港湾民宿</p>
+		</div>
+	</div>
+
+
+
+{#   <script src="js/modernizr.js"></script> <!-- Modernizr -->#}
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+    {#	<script src="js/menu_test.js"></script> #}
+	<script src="{% static 'js/menu_test.js' %}"></script> <!-- Resource jQuery -->
+	<!-- //menu-js -->
+	<!-- Kick off Filterizr -->
+{#    <script src="js/jquery.filterizr.js"></script>#}
+	<script src="{% static 'js/jquery.filterizr.js' %}"></script>
+{#    <script src="js/controls.js"></script>#}
+	<script src="{% static 'js/controls.js' %}"></script>
+	<script type="text/javascript">
+		$(function() {
+			//Initialize filterizr with default options
+			$('.filtr-container').filterizr();
+		});
+	</script>
+	<!-- swipe box js -->
+{#    <script src="js/jquery.swipebox.min.js"></script>#}
+	<script src="{% static 'js/jquery.swipebox.min.js' %}"></script>
+	<script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+	</script>
+	<!-- //swipe box js -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+{#    <script src="js/bootstrap.js"></script>#}
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

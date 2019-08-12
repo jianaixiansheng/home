@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>已经发布过用户的信息</title>
+    {% load static %}
+    <style>
+        *{
+            margin: auto;
+        }
+        a{
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%;height: 100px;text-align: center">
+    <h1>查看发布房屋页面</h1>
+</div>
+<div style="height: 500px">
+{% for already in page %}
+    <ul>
+        <li style="list-style: none">
+            <table style="border:5px blanchedalmond dotted">
+                <tr>
+            <th><p>房屋地址：{{ already.house_addr }}</p></th>
+            <th><p>房屋单价：{{ already.house_price }}</p></th>
+            <th><p>房屋简介：{{ already.house_intro }}</p></th>
+            <th><p>房屋类型：{{ already.house_type }}</p></th>
+{#            <th><p>房屋图片：<img src="{{ already.pic_fk.Image.url }}" alt="" style="width: 800px;height: 300px"></p></th>#}
+            <th><p>房屋图片：<img src="{{ already.pic_fk.Image.url }}" alt="" style="width: 800px;height: 300px"></p></th>
+                </tr>
+            </table>
+        </li>
+    </ul>
+{% endfor %}
+{% if page.has_previous %}
+    <a href="already_house{{ page.previous_page_number }}" style="text-decoration: none;position:relative;left: 400px">上一页</a>
+{% endif %}
+
+{% for pindex in page.paginator.page_range %}
+    {% if pindex == page.number %}
+        <span style="position:relative;left: 400px">{{ pindex }}</span>
+    {% else %}
+        <a href="already_house{{ pindex }}" style="text-decoration: none;position:relative;left: 450px">{{ pindex }}</a>
+    {% endif %}
+{% endfor %}
+
+{% if page.has_next %}
+        <a href="already_house{{ page.next_page_number }}" style="text-decoration: none;position:absolute;left: 500px">下一页</a>
+{% endif %}
+    <a href="{% url 'xiu:house_info' %}"  style="text-decoration: none;position:absolute;left: 550px">返回</a>
+    <a href="{% url 'xiu:modifier' c_id=page.number %}" style="text-decoration: none;position:absolute;left: 600px">修改页面</a>
+</div>
+</body>
+</html>

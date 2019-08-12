@@ -4,7 +4,7 @@ app_name = 'login'
 urlpatterns = [
     path("register/",views.register,name="register"),  # 显示注册页面
     path("login/",views.login,name="login"),  # 显示登录页面
-    path("index/",views.index,name="index"),  # 首页
+
     # path("test_ajax/",views.ajax_test,name="ajax_test"),  # 显示ajax页面
     # path("login_check/",views.login_check), # 用户登录校验
     path("login_ajax/",views.login_ajax,name="login_ajax"),  # 显示ajax登录页面

@@ -20,11 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('xiu/', include('xiu.urls')),
+    path('', include('xiu.urls')),
     path('poll/', include('poll.urls')),
     path('admin/', admin.site.urls),
     path('order/',include('order.urls')), # 订单系统
-    path("",include('detail.urls')),
+    path("detail/",include('detail.urls')),
     path('login/', include('login.urls')),
 
     path('body/', include('body.urls')), # body下的urls

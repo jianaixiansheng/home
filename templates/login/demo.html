@@ -28,7 +28,7 @@
             {'user_tel':login_form.user_tel.value,'yzm':login_form.yzm.value},
             function (data) {
                 if (data.res == 1){
-                    location.href = '{% url "login:index" %}'
+                    location.href = '{% url "xiu:index" %}'
                 }if(data.res == 0){
                     alert('账号或密码错误')
                 }if(data.res == 2){

@@ -13,6 +13,7 @@ def login_check(view_func):
             u_id = request.session['u_id']
             if u_id:
                 return view_func(request,*args,**kwargs)
+
             else:
                 return redirect('login:login')
         except:

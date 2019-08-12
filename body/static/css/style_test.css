@@ -271,7 +271,7 @@ a.wthree-btn.w3btn2.w3btn2a {
 	-o-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
-	/* replace text with image */
+	/* replace text with images */
 	overflow: hidden;
 	white-space: nowrap;
 	color: transparent !important;
@@ -1893,7 +1893,7 @@ ul.simplefilter {
 .logo h1 {
     font-size: 2.5em;
 }
-.header {
+.headers {
     padding-top: 1.5em;
 }
 .cd-stretchy-nav {

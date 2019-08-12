@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布房源信息页面</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<!-- owl.carousel css -->
+
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+
+		<link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}">
+
+		<!-- font-awesome css -->
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+		<link rel="stylesheet" href="{% static 'css/icon.css' %}">
+		<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+        <!-- magnific css -->
+        <link rel="stylesheet" href="{% static 'css/zebra_datepicker.css' %}">
+		<!-- magnific css -->
+        <link rel="stylesheet" href="{% static 'css/magnific.min.css' %}">
+		<!-- venobox css -->
+		<link rel="stylesheet" href="{% static 'css/venobox.css' %}">
+		<!-- style css -->
+		<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+		<!-- responsive css -->
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/base1.css' %}">
+
+
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/home1.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/landlord_rule.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/Service rules.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/service_contract.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+</head>
+<style>
+    p{
+        color: white;
+    }
+</style>
+<body>
+
+<header class="header" style="width: 100%; ">
+            <div class="container clearfix">
+                <div class="header-right-info">
+                    <ul>
+                        <li>
+                            <div class="single-header-right-info" style="margin-left: 300px">
+                                <div class="icon-box"><i class="fa fa-map-marker"></i></div>
+                                <div class="text-box">
+                                    <p>港湾民宿, <br> 中国，北京</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="single-header-right-info">
+                                <div class="icon-box"><i class="fa fa-phone"></i></div>
+                                <div class="text-box">
+                                    <p>+010 88888888 <br>Gang wan.com</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="single-header-right-info">
+                                <div class="icon-box"><i class="fa fa-clock-o"></i></div>
+                                <div class="text-box">
+                                    <p>出门在外，不用住酒店，住我家 <br>给你家一样的温暖</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-left-info">
+                    <div class="link">
+{#                        <a href="order.html" class="thm-btn-inverse">立即预定</a>#}
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<div style="width: 100%;height: 100%;">
+<form action="{% url "xiu:house_info" %}" method="post" enctype="multipart/form-data" style="padding-left: 570px;width: 100%;height: 100%;background-image: url('{% static 'index/img/background/modifier.jpg' %}'); " >
+{% csrf_token %}
+<p>房屋地址：<input type="text" name="house_addr" placeholder="请输入房屋地址" required="required"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink;">
+    </p>
+    <p>房屋单价：<input type="text" name="house_price" placeholder="请输入房屋单价" required="required"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>房屋简介：<input type="text" name="house_intro" required="required" placeholder="请输入房屋简介"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>房屋户型：<input type="text" name="house_type" required="required" placeholder="请输入房屋户型"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>宜居人数：<input type="text" name="house_num" required="required" placeholder="请输入宜居人数"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+
+    <p>床铺数量：<input type="text" name="house_bed" required="required" placeholder="请输入床铺数量"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>床铺规格：<input type="text" name="house_bed_size" required="required" placeholder="请输入床铺规格"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>房屋描述：<input type="text" name="house_describe" required="required" placeholder="请输入房屋描述"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>内部情况：<input type="text" name="house_status" required="required" placeholder="请输入内部情况"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>交通情况：<input type="text" name="house_traffic" required="required" placeholder="请输入交通情况"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+
+<p>周边情况：<input type="text" name="house_env" required="required" placeholder="请输入周边情况"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+
+<p>配套设施：<input type="text" name="house_set" required="required" placeholder="请输入房屋的配套设施"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>入住须知：<input type="text" name="house_have_to" required="required" placeholder="请输入入住须知" size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>订房押金：<input type="text" name="house_cash" required="required" placeholder="请输入订房押金"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>住房要求：<input type="text" name="house_req" required="required" placeholder="请输入住房要求" size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+
+    <p>预定方式：<input type="text" name="house_way" required="required" placeholder="请输入预订方式"  size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>退订方式：<input type="text" name="house_debook" required="required" placeholder="请输入退订方式" size="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='pink'" style="width: 200px; height: 21px"
+onmouseout="this.style.borderColor='black';this.style.backgroundColor='lightskyblue'" style="border-width:1px;border-color:deeppink"></p>
+    <p>房屋的图片：<input type="file" name="Image" multiple="multiple" value="选择图片"></p>
+    <input type="submit" value="保存"> <a href="{% url 'xiu:index' %}" style="color: white">返回</a>
+</form>
+<section class="footer-bottom">
+                    <div class="container clearfix">
+                      <div class="pull-left">
+                        <p>Copyright © Marcho 2018. All rights.</p>
+                      </div>
+                        <div>
+                            <a href="{% url 'xiu:Service_rule' %}">住房规则</a>
+                            <a href="{% url 'xiu:landlord_rule' %}">房东规则</a>
+                            <a href="{% url 'xiu:service_contract' %}">服务协议</a>
+                        </div>
+                      <div class="pull-right">
+                        <p>港湾民宿，欢迎您的入住</p>
+                      </div>
+                    </div>
+</section>
+</div>
+</body>
+</html>
